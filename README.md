@@ -13,27 +13,50 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Flutter Extension for Gemini CLI
 
-This extension provides a set of commands to help you work with Dart and Flutter projects.
-
-The override file contains some rules that are appended to the end of all of Gemini's rules so that they have more weight.
+This extension provides a set of commands to help you work with Dart and Flutter projects. It will be installed in your ~/.gemini/extensions directory.
 
 ## Installation
 
-To install this extension, use the `extensions` command line argument:
+First, make sure you are on the preview build of Gemini CLI, by installing it:
 
 ```shell-command
-gemini extensions install https://github.com/flutter/ai-guidance.git
+npm install -g @google/gemini-cli@preview
 ```
 
-Once installed, to update it run:
+Next, enable it in your `~/.gemini/settings.json` file by adding the following "experimental" section:
+
+```json
+{
+  // ...other settings
+  "experimental": {
+    "extensionManagement": true
+  }
+}
+```
+
+Now install the extension:
 
 ```shell-command
-gemini extensions update https://github.com/flutter/ai-guidance.git
+gemini extensions install --source https://github.com/flutter/ai-guidance.git
+```
+
+Once installed, run this to update it:
+
+```shell-command
+gemini extensions update flutter
+```
+
+To uninstall it:
+
+```shell-command
+gemini extensions uninstall flutter
 ```
 
 ## Rules
 
 The [flutter.md](./flutter.md) file contains a bunch of rules for writing Dart code. Some are very opinionated, so you should probably review them and make sure they agree with your style.
+
+The [override](./override) file contains some rules that are appended to the end of all of Gemini's rules so that they have more weight.
 
 ## Available Commands
 
