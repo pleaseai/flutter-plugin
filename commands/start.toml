@@ -1,0 +1,14 @@
+# This command will be invoked via: /flutter:start
+
+description = "Prepares the model to start working on Dart code, based on the observation that conversation history is more powerful in getting the LLM to comply with the rules."
+
+prompt = """
+We're going to work on some Dart code, so please review the following for me:
+
+1) Summarize the rules you have around working with Dart code.
+2) Summarize the rules you have around working with Flutter code (on top of the Dart rules above)
+3) Summarize the rules you have around working with Dartdoc API comments.
+4) List the tools you have available for working with Dart code.
+
+Please follow these rules closely for this session.
+"""
