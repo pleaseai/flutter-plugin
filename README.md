@@ -62,11 +62,11 @@ The [override](./override) file contains some rules that are appended to the end
 
 This extension adds some commands, all of which can be run with our without the "flutter:" prefix (as long as there isn't a name collision with another extension).
 
-### `/flutter:start`
+### `/start` (or `/flutter:start` if you have more than one start command)
 
 Initializes the agent to work on Dart code. It will summarize the coding guidelines, documentation rules, and the tools it has available for Dart development. Use this command at the beginning of a session to ensure the agent is primed with the correct context.
 
-### `/flutter:create-app`
+### `/create-app` (or `/flutter:create-app` if you have more than one create-app command)
 
 Starts the process of creating a new Dart or Flutter package. The agent will:
 
@@ -77,7 +77,7 @@ Starts the process of creating a new Dart or Flutter package. The agent will:
 
 This command is ideal for bootstrapping a new project with best practices from the start.
 
-### `/flutter:refactor`
+### `/refactor` (or `/flutter:refactor` if you have more than one refactor command)
 
 Initiates a guided refactoring session for existing code. The agent will:
 
@@ -88,7 +88,7 @@ Initiates a guided refactoring session for existing code. The agent will:
 
 This command helps structure complex refactoring tasks, ensuring they are well-planned and executed.
 
-### `/flutter:commit`
+### `/commit` (or `/flutter:commit` if you have more than one commit command)
 
 Prepares your current changes for a git commit. The agent will:
 
