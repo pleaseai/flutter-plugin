@@ -7,7 +7,7 @@ We're going to refactor some code.
 
 ## Problem specification
 
-First, I want you to prompt me for a description of what the purpose of the refactor is, and what I want done, and whether it should be done on a new branch.
+First, I want you to prompt me for a description of what the purpose of the refactor is, what I want done, and whether it should be done on a new branch.
 
 If there are ambiguous elements, ask me questions to clarify. When the goal is clear, or I say to, then move on to initializaing the workspace.
 
@@ -43,13 +43,13 @@ The plan should include instructions similar to: "After completing a task, if yo
 
 The implementation plan should specify after each phase that you should:
 
-1. Run the dart_fix and dart_format tools to clean up the code.
-2. Run the analyze_files tool one more time and fix any issues.
-3. Run any tests to make sure they all pass.
-4. Run dart_format one more time to make sure that the formatting is still correct if you made any changes during the analysis and testing steps.
-5. Use `git diff` to verify the changes that have been made, and create a suitable commit message for any changes, following any guidelines you have about commit messages. Be sure to properly escape dollar signs and backticks, and present the change message to me for approval.
-6. Update the REFACTOR_IMPLEMENTATION.md file with the current state, including any learnings, surprises, or deviations in the Journal section.
-7. Wait for approval. Don't commit the changes or move on to the next phase of implementation until I approve the commit.
+- [ ] Run the dart_fix and dart_format tools to clean up the code.
+- [ ] Run the analyze_files tool one more time and fix any issues.
+- [ ] Run any tests to make sure they all pass.
+- [ ] Run dart_format one more time to make sure that the formatting is still correct if you made any changes during the analysis and testing steps.
+- [ ] Use `git diff` to verify the changes that have been made, and create a suitable commit message for any changes, following any guidelines you have about commit messages. Be sure to properly escape dollar signs and backticks, and present the change message to me for approval.
+- [ ] Update the REFACTOR_IMPLEMENTATION.md file with the current state, including any learnings, surprises, or deviations in the Journal section.
+- [ ] Wait for approval. Don't commit the changes or move on to the next phase of implementation until I approve the commit.
 
 Have me review this implementation plan and approve it before starting implementation.
 """
