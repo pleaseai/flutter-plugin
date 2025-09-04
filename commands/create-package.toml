@@ -62,6 +62,7 @@ The implementation plan should specify after each phase that you should:
 - [ ] Run any tests to make sure they all pass.
 - [ ] Run dart_format one more time to make sure that the formatting is still correct if you made any changes during the analysis and testing steps.
 - [ ] Use `git diff` to verify the changes that have been made, and create a suitable commit message for any changes, following any guidelines you have about commit messages. Be sure to properly escape dollar signs and backticks, and present the change message to me for approval.
+- [ ] Re-read the IMPLEMENTATION.md file to see what, if anything, has changed in the implementation plan, and if it has changed, take care of anything the changes imply.
 - [ ] Update the IMPLEMENTATION.md file with the current state, including any learnings, surprises, or deviations in the Journal section.
 - [ ] Wait for approval. Don't commit the changes or move on to the next phase of implementation until I approve the commit.
 
