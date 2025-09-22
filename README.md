@@ -1,4 +1,4 @@
-# Flutter AI Guidance
+# Flutter Gemini CLI Extension
 
 A repository of guidance for AI agents building Flutter and Dart code.
 
