@@ -19,7 +19,7 @@ version of Gemini CLI this way: `gemini --version`.
 Now install the extension:
 
 ```shell-command
-gemini extensions install --source https://github.com/flutter/gemini-cli-extension.git
+gemini extensions install --source https://github.com/gemini-cli-extensions/flutter.git
 ```
 
 Once installed, run this to update it:
