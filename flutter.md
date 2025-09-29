@@ -48,7 +48,8 @@ mobile platforms.
 
 ## Package Management
 
-- **Pub Tool:** To manage packages, use the `pub` tool, if available.
+- **Pub Tool:** To add or remove package dependencies from the project, use
+  the `pub` tool with the add and remove subcommands.
 - **External Packages:** If a new feature requires an external package, use the
   `pub_dev_search` tool, if it is available. Otherwise, identify the most
   suitable and stable package from pub.dev.
