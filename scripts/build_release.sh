@@ -23,24 +23,7 @@ else
 fi
 
 archive_name="$os.$arch.flutter.tar"
-exe_file="flutter_launcher_mcp.exe"
-trap 'rm -f "$compile_log"' EXIT
-compile_log="$(mktemp --tmpdir compile_log_XXXX)"
-
-function build_exe() (
-  CDPATH= cd flutter_launcher_mcp && \
-  dart pub get && \
-  version=$(yq -r '.version' pubspec.yaml) && \
-  dart compile exe bin/flutter_launcher_mcp.dart -o "../$exe_file" --define=FLUTTER_LAUNCHER_VERSION=$version 2>&1 > "$compile_log"
-)
-
-build_exe || \
-  (echo "Failed to compile $exe_file"; \
-   cat "$compile_log"; \
-   rm -f "$compile_log"; \
-   exit 1)
-
-rm -f "$compile_log" "$archive_name"
+rm -f "$archive_name"
 
 # Create the archive of the extension sources that are in the git ref.
 git archive --format=tar -o "$archive_name" "$tag_name" \
@@ -50,9 +33,6 @@ git archive --format=tar -o "$archive_name" "$tag_name" \
   README.md \
   flutter.md
 
-# Append the compiled kernel file to the archive.
-tar --append --file="$archive_name" "$exe_file"
-rm -f "$exe_file"
 gzip --force "$archive_name"
 archive_name="${archive_name}.gz"
 

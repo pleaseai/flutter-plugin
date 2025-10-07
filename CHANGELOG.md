@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Removed the `flutter_launcher` MCP server because it has been integrated into
+  the Dart MCP server in [dart-lang/ai#292](https://github.com/dart-lang/ai/pull/292)
+
 ## 0.2.2
 
 - Fixes the executable path for the flutter_launcher MCP server.

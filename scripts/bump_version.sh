@@ -18,9 +18,6 @@ REPO_ROOT="$(dirname "$SCRIPT_DIR")"
 # Update gemini-extension.json
 jq --arg version "$NEW_VERSION" '.version = $version' "$REPO_ROOT/gemini-extension.json" > "$REPO_ROOT/gemini-extension.json.tmp" && command mv -f "$REPO_ROOT/gemini-extension.json.tmp" "$REPO_ROOT/gemini-extension.json"
 
-# Update pubspec.yaml
-yq -y ".version = \"$NEW_VERSION\"" "$REPO_ROOT/flutter_launcher_mcp/pubspec.yaml" > "$REPO_ROOT/flutter_launcher_mcp/pubspec.yaml.tmp" && mv "$REPO_ROOT/flutter_launcher_mcp/pubspec.yaml.tmp" "$REPO_ROOT/flutter_launcher_mcp/pubspec.yaml"
-
 # Check and update CHANGELOG.md
 CHANGELOG_FILE="$REPO_ROOT/CHANGELOG.md"
 if ! grep -q "## $NEW_VERSION" "$CHANGELOG_FILE"; then
@@ -35,9 +32,5 @@ if ! grep -q "## $NEW_VERSION" "$CHANGELOG_FILE"; then
   } > "$TEMP_FILE"
   mv "$TEMP_FILE" "$CHANGELOG_FILE"
 fi
-
-# Update README.md
-sed -i.bak 's/  flutter_launcher_mcp: \^.*/  flutter_launcher_mcp: ^'"$NEW_VERSION/g" "$REPO_ROOT/flutter_launcher_mcp/README.md" && \
-  rm "$REPO_ROOT/flutter_launcher_mcp/README.md.bak"
 
 echo "Version bumped to $NEW_VERSION"
