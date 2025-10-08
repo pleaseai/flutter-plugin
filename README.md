@@ -43,31 +43,34 @@ gemini extensions uninstall flutter
 **Note for Windows users:** There is currently a [known issue](https://github.com/google-gemini/gemini-cli/issues/10616) with installing extensions on Gemini CLI for Windows. The workaround is as follows:
 
 1. Follow instructions above to attempt to install the plugin (this will fail).
-```bash
-    gemini extensions install https://github.com/gemini-cli-extensions/flutter.git
- ```
- 
+
+   ```bash
+       gemini extensions install https://github.com/gemini-cli-extensions/flutter.git
+   ```
+
 2. In the command line, navigate to the folder in the home user's path where the code was downloaded (USER is the user's username)
-```bash
-    cd %TEMP%
-```
- 
-3. Locate the folder for the downloaded extension. It will be the latest titled "gemini-extension<hash>" where <hash> is a 6 character string. Change into this directory.
-```bash
-    cd gemini-extension123456
-```
+
+   ```bash
+       cd %TEMP%
+   ```
+
+3. Locate the folder for the downloaded extension. It will be the latest titled `gemini-extension<hash>` where `<hash>` is a 6 character string. Change into this directory.
+
+   ```bash
+       cd gemini-extension123456
+   ```
 
 4. There should be a zip file in this folder called "win32.flutter.zip". Unpack this file using `tar` (available in modern Windows versions) or by right-clicking it in File Explorer and selecting "Extract All...".
 
-```bash
-    tar xvf win32.flutter.zip
-```
+   ```bash
+       tar xvf win32.flutter.zip
+   ```
 
 5. Use the path flag to gemini installation
 
-```bash
-    gemini extensions install --path %TEMP%\gemini-extension123456
-```
+   ```bash
+       gemini extensions install --path %TEMP%\gemini-extension123456
+   ```
 
 ### 2. Available Commands
 
@@ -132,24 +135,24 @@ Prepares your staged `git` changes for a clean, high-quality commit. It acts as 
 This extension enforces a specific set of coding standards to ensure consistency and quality. These rules are defined in the extension's repository:
 
 - **`flutter.md`**: Contains rules and best practices for writing Dart and Flutter code. These rules are opinionated, and we encourage you to review them to ensure they align with your style.
-- **`override`**: Contains important, high-priority rules that are appended to the end of all prompts to ensure they have the most weight.
 
 ## Connecting to a running app
+
 You can connect to an app by providing the Flutter extension with the URL for
 the Dart Tooling Daemon:
 
 1. **Run the app**: in VSCode on a target device (iOS, Android, macOS, or web)
 2. **Execute the Copy DTD Uri action**: Open the VSCode Command Runner
-(Cmd+Shift+P, or Ctrl+Shift+P) and type "Copy DTD Uri to Clipboard" to copy the
-DTD URL to your clipboard
+   (Cmd+Shift+P, or Ctrl+Shift+P) and type "Copy DTD Uri to Clipboard" to copy the
+   DTD URL to your clipboard
 3. **Paste the URL into Gemini CLI**: Enter a prompt like "Connect to the
-Flutter app with this DTD URL: " and paste the URL from your clipboard. You
-should see a "Connection succeeded" message from the
-connect_dart_tooling_daemon MCP tool.
+   Flutter app with this DTD URL: " and paste the URL from your clipboard. You
+   should see a "Connection succeeded" message from the
+   connect_dart_tooling_daemon MCP tool.
 
 Alternatively, you can run from the command line with the `--print-dtd` flag:
 
-```
+```bash
 $ flutter run --print-dtd
 ...
 The Dart Tooling Daemon is available at: ws://127.0.0.1:52636/M3G9d1Q3hFk=
@@ -162,9 +165,9 @@ page on dart.dev or the
 
 ## Known issues
 
-* Running a Flutter app from within Gemini CLI and then triggering a Hot Reload
-  does not work in Flutter stable <= 3.35.4.
-  Tracking issue: https://github.com/flutter/gemini-cli-extension/issues/82
+- Running a Flutter app from within Gemini CLI and then triggering a Hot Reload
+  does not work in Flutter stable <= 3.37.0.
+  Tracking issue: [flutter/gemini-cli-extension#82](https://github.com/flutter/gemini-cli-extension/issues/82)
 
 ## 🐛 Troubleshooting
 
