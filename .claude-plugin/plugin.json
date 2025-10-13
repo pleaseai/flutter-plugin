@@ -1,0 +1,14 @@
+{
+  "name": "flutter",
+  "version": "0.3.0",
+  "description": "Enables several Flutter and Dart-related commands and context.",
+  "commands": ["./commands"],
+  "mcpServers": {
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server"
+      ]
+    }
+  }
+}
