@@ -2,6 +2,10 @@
   "name": "flutter",
   "version": "0.3.0",
   "description": "Enables several Flutter and Dart-related commands and context.",
+  "author": {
+    "name": "Google",
+    "url": "https://github.com/gemini-cli-extensions"
+  },
   "contextFileName": "flutter.md",
   "commands": ["./commands"],
   "mcpServers": {
