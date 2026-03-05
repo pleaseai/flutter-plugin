@@ -6,7 +6,6 @@
     "name": "Google",
     "url": "https://github.com/gemini-cli-extensions"
   },
-  "commands": ["./commands"],
   "mcpServers": {
     "dart": {
       "command": "dart",
